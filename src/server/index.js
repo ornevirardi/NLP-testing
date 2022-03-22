@@ -3,6 +3,7 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
+const fetch = require('node-fetch')
 var path = require("path");
 const express = require("express");
 const app = express();
@@ -15,8 +16,6 @@ app.use(bodyParser.json());
 const cors = require("cors");
 const { request } = require("http");
 app.use(cors());
-
-const fetch = require('node-fetch');
 
 
 app.get("/", function (req, res) {
@@ -56,3 +55,4 @@ app.post('/Api', async (request, response)=>{
     }
 });
 
+ 
