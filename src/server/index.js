@@ -32,8 +32,8 @@ app.listen(8080, function () {
 
 const baseURL = "https://api.meaningcloud.com/sentiment-2.1?key=";
 const apiKey = process.env.API_KEY;
-module.exports = baseURL;
 
+export {baseURL}
 
 console.log(`Your API key is ${process.env.API_KEY}`);
 console.log(__dirname)
