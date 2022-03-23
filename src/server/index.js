@@ -37,11 +37,6 @@ export {baseURL}
 console.log(`Your API key is ${process.env.API_KEY}`);
 console.log(__dirname)
 
-// designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-  console.log("App is succesfully running on port 8080!");
-});
-
 app.post('/Api', async (request, response)=>{
     const meaning_url = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&lang=auto&url=${request.body.data}`
     const api_data = await fetch(meaning_url);
