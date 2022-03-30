@@ -9,3 +9,10 @@ import './styles/header.scss'
 
 export { checkForName }
 export{handleSubmit}
+
+//Event listener to get things done taken from: https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event and https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    console.log('DOM fully loaded and parsed');
+    document.getElementsByClassName("formclass").addEventListener('submit', handleSubmit)
+});
