@@ -1,4 +1,3 @@
-import { cli } from 'webpack-dev-server';
 import {checkForName} from '../js/nameChecker';
 
 function handleSubmit(event) {
