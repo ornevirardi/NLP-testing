@@ -31,18 +31,18 @@ function listening() {
   console.log(`Running on localhost: ${port}`);
 }
 
-app.get("/", function (req, res) {
+app.get("/api/", function (req, res) {
   res.sendFile(path.resolve("dist/index.html"));
 });
 
 //Fetch data from MeaningCloud and store it to use in performAction
 async function getMeaningData(userInput) {
-  let meaning_url = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}${restUrl}${userInput}`;
+  let meaning_url = `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&of=json${restUrl}${userInput}`;
   const api_data = await fetch(meaning_url);
   console.log(`Raw data from MeaningCloud: ${api_data}`);
   try {
     console.log("Fetching Data from MeaningCloud");
-    const api_data_json = await api_data.json();
+    const api_data_json = await api_data.JSON();
     console.log(api_data_json);
   } catch (error) {
     console.log("There has been an error, try again!");
