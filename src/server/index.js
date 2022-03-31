@@ -31,7 +31,7 @@ function listening() {
   console.log(`Running on localhost: ${port}`);
 }
 
-app.get("/api/", function (req, res) {
+app.get("/", function (req, res) {
   res.sendFile(path.resolve("dist/index.html"));
 });
 
